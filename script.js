@@ -1,5 +1,5 @@
 function validarTexto(texto) {
-    // Expresión regular para detectar mayúsculas y letras con acentos
+    
     const regex = /[A-ZÀ-ÿ]/;
 
     return regex.test(texto);
@@ -25,7 +25,7 @@ function encriptar() {
     if (texto.length != 0) {
         document.getElementById("texto").value = textoCifrado;
         tituloMensaje.textContent = "Texto encriptado con éxito";
-        parrafo.textContent = textoCifrado;  // Muestra el texto encriptado
+        parrafo.textContent = textoCifrado;  
     } else {
         tituloMensaje.textContent = "Ningún mensaje fue encontrado";
         parrafo.textContent = "Ingresa el texto que deseas encriptar o desencriptar";
@@ -53,7 +53,7 @@ function desencriptar() {
     if (texto.length != 0) {
         document.getElementById("texto").value = textoCifrado;
         tituloMensaje.textContent = "Texto desencriptado con éxito";
-        parrafo.textContent = textoCifrado;  // Muestra el texto desencriptado
+        parrafo.textContent = textoCifrado;  
     } else {
         tituloMensaje.textContent = "Ningún mensaje fue encontrado";
         parrafo.textContent = "Ingresa el texto que deseas encriptar o desencriptar";
@@ -66,7 +66,7 @@ function copiarTexto() {
     let parrafo = document.getElementById("parrafo").textContent.trim();
     
     if (parrafo !== "Ingresa el texto que deseas encriptar o desencriptar" && parrafo.length !== 0) {
-        // Crear un campo de texto temporal para copiar el texto
+        
         let tempInput = document.createElement("textarea");
         tempInput.value = parrafo;
         document.body.appendChild(tempInput);
@@ -80,5 +80,5 @@ function copiarTexto() {
     }
 }
 
-// Asigna la función al botón de copiar
+
 document.getElementById("copy-button").addEventListener("click", copiarTexto);
