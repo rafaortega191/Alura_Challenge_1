@@ -1,7 +1,19 @@
+function validarTexto(texto) {
+    // Expresión regular para detectar mayúsculas y letras con acentos
+    const regex = /[A-ZÀ-ÿ]/;
+
+    return regex.test(texto);
+}
+
 function encriptar() {
     let texto = document.getElementById("texto").value;
     let tituloMensaje = document.getElementById("titulo-mensaje");
     let parrafo = document.getElementById("parrafo");
+
+    if (validarTexto(texto)) {
+        alert('Error: No se aceptan mayúsculas ni letras con acentos.');
+        return;
+    }
 
     let textoCifrado = texto
         .replace(/e/gi, "enter")
@@ -26,6 +38,11 @@ function desencriptar() {
     let tituloMensaje = document.getElementById("titulo-mensaje");
     let parrafo = document.getElementById("parrafo");
 
+    if (validarTexto(texto)) {
+        alert('Error: No se aceptan mayúsculas ni letras con acentos.');
+        return;
+    }
+
     let textoCifrado = texto
         .replace(/enter/gi, "e")
         .replace(/imes/gi, "i")
@@ -43,6 +60,7 @@ function desencriptar() {
         alert('Error, no se ingresó ningún texto');
     }
 }
+
 
 function copiarTexto() {
     let parrafo = document.getElementById("parrafo").textContent.trim();

@@ -13,6 +13,18 @@ header {
   height: 60px;
 }
 
+/* Estilos para el footer */
+footer {
+  background-color: #f3f5fc;
+  color: #000;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+
 .container {
   position: relative;
   width: 100vw;
